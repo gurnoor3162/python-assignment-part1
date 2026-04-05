@@ -1,5 +1,4 @@
 #task 1
-
 raw_students = [
   {"name": "  AyesHa", "roll": "101", "marks_str": "88, 72, 95, 60, 78"},
   {"name": "ROhit", "roll": "102", "marks_str": "55, 68, 49, 72, 61"},
@@ -41,7 +40,6 @@ for student in cleaned_students:
 
 
 #task2
-
 student_name = "Ayesha"
 subjects = ["Math", "Physics", "CS", "English", "Chemistry"]
 marks = [88, 72, 95, 60, 78]
@@ -103,7 +101,6 @@ print("Updated average:", new_avg)
 
 
 #task3
-
 class_data = [
   ("Ayesha", [88, 72, 95, 60, 78]),
   ("Rohit", [55, 68, 49, 72, 61]),
@@ -151,7 +148,6 @@ print("Class average:", class_avg)
 
 
 #task4
-
 essay = " python is a versatile language. it is object oriented, functional, and procedural programming. python is widely used."
 
 clean = essay.strip().lower()

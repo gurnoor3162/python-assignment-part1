@@ -1,46 +1,47 @@
-#task 1
+#task1
 raw_students = [
-  {"name": "  AyesHa", "roll": "101", "marks_str": "88, 72, 95, 60, 78"},
-  {"name": "ROhit", "roll": "102", "marks_str": "55, 68, 49, 72, 61"},
-  {"name": " PriyA ", "roll": "103", "marks_str": "91, 85, 88, 94, 79"},
-  {"name": "KAran", "roll": "104", "marks_str": "40, 55, 38, 62, 50"},
-  {"name": "SnEha", "roll": "105", "marks_str": "75, 80, 70, 68, 85"},
+  {"name": " ayesha SHARMA ", "roll": "101", "marks_str": "88, 72, 95, 60, 78"},
+  {"name": "ROHIT verma", "roll": "102", "marks_str": "55, 68, 49, 72, 61"},
+  {"name": " Priya Nair ", "roll": "103", "marks_str": "91, 85, 88, 94, 79"},
+  {"name": "karan MEHTA", "roll": "104", "marks_str": "40, 55, 38, 62, 50"},
+  {"name": " Sneha pillai ", "roll": "105", "marks_str": "75, 80, 70, 68, 85"},
 ]
 
-cleaned_students = []
+cleaned = []
 
-for student in raw_students:
-  name = student["name"].strip().title()
-  roll = int(student["roll"])
-  marks = [int(x.strip()) for x in student["marks_str"].split(",")]
+for s in raw_students:
+  name = s["name"].strip().title()
+  roll = int(s["roll"])
+  marks = [int(x.strip()) for x in s["marks_str"].split(",")]
 
+  # check valid name
   valid = True
   for part in name.split():
     if not part.isalpha():
       valid = False
 
   if valid:
-    print(name, "- Valid name")
+    print("Valid name")
   else:
-    print(name, "- Invalid name")
+    print("Invalid name")
 
-  print("================================")
-  print("Student :", name)
-  print("Roll No :", roll)
-  print("Marks  :", marks)
-  print("================================")
+  print("==============================")
+  print(f"Student : {name}")
+  print(f"Roll No : {roll}")
+  print(f"Marks   : {marks}")
+  print("==============================")
 
-  cleaned_students.append({"name": name, "roll": roll, "marks": marks})
+  cleaned.append({"name": name, "roll": roll, "marks": marks})
 
-#printing name
-for student in cleaned_students:
-  if student["roll"] == 103:
-    print(student["name"].upper())
-    print(student["name"].lower())
+# print for roll 103
+for s in cleaned:
+  if s["roll"] == 103:
+    print(s["name"].upper())
+    print(s["name"].lower())
 
 
 #task2
-student_name = "Ayesha"
+student_name = "Ayesha Sharma"
 subjects = ["Math", "Physics", "CS", "English", "Chemistry"]
 marks = [88, 72, 95, 60, 78]
 
@@ -72,8 +73,6 @@ min_mark = min(marks)
 print("Highest scoring subject:", subjects[marks.index(max_mark)], max_mark)
 print("Lowest scoring subject:", subjects[marks.index(min_mark)], min_mark)
 
-
-#while loop for new subjects
 new_count = 0
 
 while True:
@@ -102,11 +101,11 @@ print("Updated average:", new_avg)
 
 #task3
 class_data = [
-  ("Ayesha", [88, 72, 95, 60, 78]),
-  ("Rohit", [55, 68, 49, 72, 61]),
-  ("Priya", [91, 85, 88, 94, 79]),
-  ("Karan", [40, 55, 38, 62, 50]),
-  ("Sneha", [75, 80, 70, 68, 85]),
+  ("Ayesha Sharma", [88, 72, 95, 60, 78]),
+  ("Rohit Verma", [55, 68, 49, 72, 61]),
+  ("Priya Nair", [91, 85, 88, 94, 79]),
+  ("Karan Mehta", [40, 55, 38, 62, 50]),
+  ("Sneha Pillai", [75, 80, 70, 68, 85]),
 ]
 
 results = []
@@ -148,7 +147,7 @@ print("Class average:", class_avg)
 
 
 #task4
-essay = " python is a versatile language. it is object oriented, functional, and procedural programming. python is widely used."
+essay = " python is a versatile language. it supports object oriented, functional, and procedural programming. python is widely used."
 
 clean = essay.strip().lower()
 
@@ -157,12 +156,10 @@ print(clean.title())
 count = clean.count("python")
 print("Count:", count)
 
-new_text = clean.replace("python", "Python")
+new_text = clean.replace("python", "Python 🐍")
 print(new_text)
 
-# split sentences
 sentences = clean.split(". ")
-print("Sentences list:", sentences)
 
 for i in range(len(sentences)):
   s = sentences[i].strip()
